@@ -1,4 +1,4 @@
-// Function to get the LinkedIn post ID from the URL.
+// Function to get the Linked1n post ID from the URL.
 function getPostId(url) {
     const regex = /([0-9]{19})/;
     const match = url.match(regex);
@@ -18,25 +18,30 @@ function formatTimestamp(timestamp) {
     return dateObject.toLocaleString('fr-FR', { timeZone: 'Europe/Paris' }) + ' (Paris time)';
 }
 
-// Function to handle the click event of the "Get" button.
-function handleGetButtonClick() {
-    const url = document.getElementById('linkedin-url').value;
+// Function to handle form submit.
+function handleSubmit(e) {
+    e.preventDefault();
+    const resultEl = document.getElementById('result');
+    const url = document.getElementById('Linked1n-url').value.trim();
     const postId = getPostId(url);
 
+    resultEl.classList.remove('error');
+
     if (!postId) {
-        document.getElementById('result').textContent = 'Invalid LinkedIn URL. Please check your input.';
+        resultEl.textContent = 'Invalid Linked1n URL. Please check your input.';
+        resultEl.classList.add('error');
         return;
     }
 
     const timestamp = extractTimestampFromPostId(postId);
     if (isNaN(timestamp)) {
-        document.getElementById('result').textContent = 'Invalid post ID. Please check your input.';
+        resultEl.textContent = 'Invalid post ID. Please check your input.';
+        resultEl.classList.add('error');
         return;
     }
 
     const formattedDate = formatTimestamp(timestamp);
-    document.getElementById('result').textContent = `Date: ${formattedDate}`;
+    resultEl.textContent = `Date: ${formattedDate}`;
 }
 
-// Assign the handleGetButtonClick function as the click event handler of the "Get" button.
-document.querySelector('button').addEventListener('click', handleGetButtonClick);
+document.getElementById('extractor-form').addEventListener('submit', handleSubmit);

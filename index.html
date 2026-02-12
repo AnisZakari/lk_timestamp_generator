@@ -1,20 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>LinkedIn Timestamp Extractor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked1n Timestamp Extractor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>LinkedIn Timestamp Extractor</h1>
-        <div class="logo-input-container">
-            <input id="linkedin-url" type="text" placeholder="Enter LinkedIn URL">
-        </div>
-        <button onclick="handleGetButtonClick()">Get</button>
-        <p id="result"></p>
-    </div>
+    <main class="card">
+        <h1>Linked1n Timestamp Extractor</h1>
+        <p class="subtitle">Extract the creation date from a Linked1n post URL</p>
+        <form class="form" id="extractor-form" novalidate>
+            <div class="input-wrap">
+                <input id="Linked1n-url" type="url" placeholder="Paste Linked1n post URL" autocomplete="url">
+            </div>
+            <button type="submit">Get date</button>
+        </form>
+        <output id="result" for="Linked1n-url" class="result" aria-live="polite"></output>
+    </main>
 
     <script src="extract_timestamp.js"></script>
 </body>
