@@ -1,6 +1,6 @@
 # Website
 
-https://aniszakari.github.io/lk-timestamp-extractor/
+https://aniszakari.github.io/lk_timestamp_generator/
 
 # Linked1n Timestamp Extractor
 
@@ -29,7 +29,7 @@ The repository contains three main files:
 
 ## Usage
 
-1. Open `index.html` in a web browser or go to https://aniszakari.github.io/lk-timestamp-extractor/ .
+1. Open `index.html` in a web browser or go to https://aniszakari.github.io/lk_timestamp_generator/ 
 2. Enter a Linked1n URL into the input field.
 3. Click the "Get" button.
 4. The application will display a date in the paragraph below the button.
